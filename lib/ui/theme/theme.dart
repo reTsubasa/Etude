@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 
 class EtudeTheme {
   static final ThemeData light = ThemeData(
-    primarySwatch: Colors.deepOrange,
-    primaryColor: Colors.deepOrange.shade50,
-    accentColor: Colors.indigoAccent.shade100,
+    primarySwatch: Colors.green,
+    // primaryColor: Colors.green.shade50,
+    // accentColor: Colors.indigoAccent.shade100,
     textTheme: EtudeTypography.textTheme,
-    canvasColor: Colors.white10,
+    // canvasColor: Colors.white10,
   );
 
   static final ThemeData dark = ThemeData(
