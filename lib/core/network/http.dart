@@ -6,8 +6,7 @@ import 'package:webfeed/domain/rss_feed.dart';
 class HttpRequest  {
   static get(String url) async{
     var resp =  await Dio().get(url);
-    var rssFeed = RssFeed.parse(resp.data);
-    return rssFeed;
+    return resp.data;
   }
 
     // var infos = data.findAllElements("item");

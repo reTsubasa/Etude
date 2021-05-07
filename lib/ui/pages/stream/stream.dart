@@ -23,20 +23,35 @@ class EtudeStreamPage extends StatefulWidget {
 
 class _EtudeStreamPageState extends State<EtudeStreamPage> {
   List<RssItem> streamItems = [];
+
   @override
   void initState() {
     super.initState();
     var cnbeta_url = SubscribeList.subscribeMap["cnbeta"];
-    streamItems = RssParser.parse(cnbeta_url);
+    RssParser.parse(cnbeta_url).then((value) {
+      streamItems = value;
+      print(value.length);
+      print("get rss items");
+    });
   }
+
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: List.generate(streamItems.length, (index){
-        Text(streamItems[index].title);
-      }),
-    );
+    return GridView.builder(
+        itemCount: streamItems.length,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 1, crossAxisSpacing: 0, childAspectRatio: 10),
+        itemBuilder: (ctx, index) {
+          return Card(
+            child: Container(
+              child: Text(streamItems[index].title,overflow: TextOverflow.ellipsis,style: Theme.of(context).textTheme.bodyText1,),
+              alignment: Alignment.centerLeft,
+              margin: EdgeInsets.only(left: 8),
+            ),
+            shadowColor: Colors.grey.shade800,
+            elevation: 2,
+            clipBehavior: Clip.hardEdge,
+          );
+        });
   }
 }
-
-
