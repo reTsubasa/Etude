@@ -33,6 +33,12 @@ dependencies:
   dio: ^4.0.0
   ## A dart package for parsing RSS and Atom feed.
   webfeed: ^0.7.0
+  ## A wrapper around InheritedWidget to make them easier to use and more reusable.
+  provider: ^5.0.0
+
+  ## A Flutter plugin for launching a URL. Supports iOS, Android, web, Windows, macOS, and Linux.
+  url_launcher: ^6.0.3
+
   ## SQLite plugin for Flutter. Supports iOS, Android and MacOS.
   sqflite: ^2.0.0+3
   ## A comprehensive, cross-platform path manipulation library for Dart.

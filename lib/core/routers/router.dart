@@ -1,10 +1,12 @@
 import 'package:etude/ui/pages/dashboard/dashboard.dart';
+import 'package:etude/ui/pages/detail/detail.dart';
 import 'package:flutter/material.dart';
 
 class EtudeRouter {
   static final String initialRoute = EtudeDashboard.routeName;
   static final Map<String,WidgetBuilder> routes = {
     EtudeDashboard.routeName:(ctx)=> EtudeDashboard(),
+    EtudeDetail.routeName:(ctx)=>EtudeDetail(),
   };
   //todo return a [Route]
   static final RouteFactory generateRoute = (settings){
