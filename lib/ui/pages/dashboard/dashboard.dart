@@ -2,7 +2,7 @@ import 'package:etude/ui/pages/dashboard/navi_items.dart';
 import 'package:flutter/material.dart';
 
 class EtudeDashboard extends StatefulWidget {
-  static const String routeName = "/dashboard";
+  static const String routeName = "/";
   @override
   _EtudeDashboardState createState() => _EtudeDashboardState();
 }

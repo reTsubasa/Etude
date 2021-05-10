@@ -13,18 +13,9 @@ class EtudeStream extends StatelessWidget {
         title: Text("信息流"),
       ),
       body: EtudeStreamPage(),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => _launchURL(),
-        child: Text("按"),
-      ),
     );
   }
 }
-
-final _url = "https://www.cnbeta.com/articles/tech/1125247.htm";
-
-void _launchURL() async =>
-    await launch(_url, forceWebView: true, enableJavaScript: false);
 
 class EtudeStreamPage extends StatefulWidget {
   @override
@@ -37,7 +28,7 @@ class _EtudeStreamPageState extends State<EtudeStreamPage> {
   @override
   void initState() {
     super.initState();
-    var cnbeta_url = SubscribeList.subscribeMap["cnbeta"];
+    var cnbeta_url = SubscribeList.subscribeMap["people"];
     RssParser.parse(cnbeta_url).then((value) {
       streamItems = value;
     });
@@ -45,6 +36,7 @@ class _EtudeStreamPageState extends State<EtudeStreamPage> {
 
   @override
   Widget build(BuildContext context) {
+
     return GridView.builder(
         itemCount: streamItems.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -56,14 +48,14 @@ class _EtudeStreamPageState extends State<EtudeStreamPage> {
                 child: Text(
                   streamItems[index].title,
                   overflow: TextOverflow.ellipsis,
-                  style: Theme.of(context).textTheme.bodyText1,
+                  style: Theme.of(context).textTheme.bodyText2,
                 ),
                 alignment: Alignment.centerLeft,
                 margin: EdgeInsets.only(left: 8),
               ),
               onTap: (){
                 Navigator.pushNamed(context, "/detail",
-                    );
+                    arguments: streamItems[index]);
               },
             ),
             shadowColor: Colors.grey.shade800,

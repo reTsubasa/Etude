@@ -38,12 +38,12 @@ class EtudeTypography {
         letterSpacing: 0.1),
     bodyText1: TextStyle(
         fontFamily: "notoSansSC",
-        fontSize: 16,
+        fontSize: 20,
         fontWeight: FontWeight.w400,
         letterSpacing: 0.5),
     bodyText2: TextStyle(
         fontFamily: "notoSansSC",
-        fontSize: 14,
+        fontSize: 18,
         fontWeight: FontWeight.w400,
         letterSpacing: 0.25),
     button: TextStyle(

@@ -4,7 +4,7 @@ import 'package:webfeed/domain/rss_feed.dart';
 
 
 class HttpRequest  {
-  static get(String url) async{
+  static Future<String> get(String url) async{
     var resp =  await Dio().get(url);
     return resp.data;
   }
@@ -17,4 +17,7 @@ class HttpRequest  {
     // myTransformer.parse(xml_data);
     // var json = myTransformer.toParker();
     // print(json);
+
+
 }
+

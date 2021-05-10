@@ -43,6 +43,12 @@ dependencies:
   sqflite: ^2.0.0+3
   ## A comprehensive, cross-platform path manipulation library for Dart.
   path: ^1.8.0
+  ## A Flutter widget for rendering HTML and CSS as Flutter widgets.
+  flutter_html: ^2.0.0-nullsafety.1
+  ##A composable, Future-based library for making HTTP requests.
+  http: ^0.13.3
+  ## EasyRefresh can easily implement pull-down refresh and upload operations on Flutter applications
+  flutter_easyrefresh: ^2.2.1
 
 dev_dependencies:
   flutter_test:

@@ -5,9 +5,8 @@ import 'package:provider/provider.dart';
 import 'app.dart';
 
 void main() {
-
-  runApp(ChangeNotifierProvider(
-    create: (ctx)=>RssViewModel(),
-    child: MyApp(),
-  ));
+  runApp(MultiProvider(providers: [
+    ChangeNotifierProvider(create: (ctx) => RssViewModel()),
+    // ChangeNotifierProvider(create: (ctx) => DetailViewModel())
+  ],child: MyApp(),));
 }
